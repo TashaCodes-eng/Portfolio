@@ -41,6 +41,16 @@
       border-radius: 8px;
       cursor: pointer;
     }
+    @keyframes flash {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.cell.flash {
+  animation: flash 0.3s ease;
+}
+
   </style>
 </head>
 <body>
@@ -55,24 +65,16 @@
 
   <button onclick="resetGrid()">Reset</button>
 
-  <script>
-    const grid = document.getElementById('grid');
-    const colorPicker = document.getElementById('colorPicker');
+  <script src="color-splash.js"></script>
 
-    // Create the grid
-    for (let i = 0; i < 100; i++) {
-      const cell = document.createElement('div');
-      cell.classList.add('cell');
-      cell.addEventListener('click', () => {
-        cell.style.backgroundColor = colorPicker.value;
-      });
-      grid.appendChild(cell);
-    }
-
-    function resetGrid() {
-      const cells = document.querySelectorAll('.cell');
-      cells.forEach(cell => cell.style.backgroundColor = '#ffffff');
-    }
-  </script>
+    <div class="brush-size">
+     <label>Brush Size:</label>
+     <button onclick="setBrushSize(1)">Small</button>
+     <button onclick="setBrushSize(3)">Medium</button>
+     <button onclick="setBrushSize(5)">Large</button>
+    </div>
+    <p id="brushDisplay">Current Brush Size: Small</p>
+    
+    
 </body>
 </html>
