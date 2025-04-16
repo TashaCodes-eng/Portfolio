@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Splash</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #fefcfb;
+      padding: 2rem;
+    }
+    h1 {
+      color: #ff6f61;
+      margin-bottom: 1rem;
+    }
+    .color-picker {
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, 30px);
+      grid-gap: 4px;
+      justify-content: center;
+      margin: 1rem auto;
+    }
+    .cell {
+      width: 30px;
+      height: 30px;
+      background: #ffffff;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #ffb6b9;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Color Splash</h1>
+  
+  <div class="color-picker">
+    <label>Pick a color: </label>
+    <input type="color" id="colorPicker" value="#ff6f61" />
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <button onclick="resetGrid()">Reset</button>
+
+  <script>
+    const grid = document.getElementById('grid');
+    const colorPicker = document.getElementById('colorPicker');
+
+    // Create the grid
+    for (let i = 0; i < 100; i++) {
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+      cell.addEventListener('click', () => {
+        cell.style.backgroundColor = colorPicker.value;
+      });
+      grid.appendChild(cell);
+    }
+
+    function resetGrid() {
+      const cells = document.querySelectorAll('.cell');
+      cells.forEach(cell => cell.style.backgroundColor = '#ffffff');
+    }
+  </script>
+</body>
+</html>
