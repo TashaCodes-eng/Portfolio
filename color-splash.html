@@ -4,86 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Color Splash</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      background: #fefcfb;
-      padding: 2rem;
-    }
-    h1 {
-      color: #ff6f61;
-      margin-bottom: 1rem;
-    }
-    .color-picker {
-      margin-bottom: 1rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(10, 30px);
-      grid-gap: 4px;
-      justify-content: center;
-      margin: 1rem auto;
-    }
-    .cell {
-      width: 30px;
-      height: 30px;
-      background: #ffffff;
-      border: 1px solid #ccc;
-      cursor: pointer;
-    }
-    button {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: #ffb6b9;
-      border: none;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    @keyframes flash {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
-}
-
-.cell.flash {
-  animation: flash 0.3s ease;
-}
-
-  </style>
+  <link rel="stylesheet" href="color- splash.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <body>
   <h1>🎨 Color Splash</h1>
-  
+
   <div class="color-picker">
-    <label>Pick a color: </label>
+    <label>Pick a color:</label>
     <input type="color" id="colorPicker" value="#ff6f61" />
   </div>
 
-  <div class="grid" id="grid"></div>
-  <div class="download-btn">
-    <button onclick="downloadArt()">💾 Save Your Art</button>
-  </div>
-  
+  <label for="pictureSelect">Choose a picture:</label>
+  <select id="pictureSelect">
+    <option value="Shapes">Shapes</option>
+    <option value="Sunshine">Sunshine</option>
+    <option value="House">House</option>
+  </select>
 
+  <div id="svgContainer"></div>
+
+  <button onclick="downloadArt()">💾 Save Your Art</button>
   <button onclick="resetGrid()">Reset</button>
 
-  <script src="color-splash.js"></script>
+  <div class="brush-size">
+    <label>Brush Size:</label>
+    <button onclick="setBrushSize(1)">Small</button>
+    <button onclick="setBrushSize(3)">Medium</button>
+    <button onclick="setBrushSize(5)">Large</button>
+  </div>
+  <p id="brushDisplay">Current Brush Size: Small</p>
 
-    <div class="brush-size">
-     <label>Brush Size:</label>
-     <button onclick="setBrushSize(1)">Small</button>
-     <button onclick="setBrushSize(3)">Medium</button>
-     <button onclick="setBrushSize(5)">Large</button>
-    </div>
-    <p id="brushDisplay">Current Brush Size: Small</p>
-    <div class="rainbow-mode">
-      <button onclick="toggleRainbow()">🌈 Toggle Rainbow Mode</button>
-      <p id="rainbowStatus">Rainbow Mode: OFF</p>
-    </div>
-    
-    
+  <div class="rainbow-mode">
+    <button onclick="toggleRainbow()">🌈 Toggle Rainbow Mode</button>
+    <p id="rainbowStatus">Rainbow Mode: OFF</p>
+  </div>
+
+  <script src="color-splash.js"></script>
 </body>
 </html>
+
