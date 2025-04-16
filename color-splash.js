@@ -68,6 +68,17 @@ function paintCellsAround(index, size) {
     return color;
   }
   
+  // Add Download
+  function downloadArt() {
+    const grid = document.querySelector('.grid');
+    html2canvas(grid).then(canvas => {
+      const link = document.createElement('a');
+      link.download = 'color-splash-art.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    });
+  }
+  
   
   
 
