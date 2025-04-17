@@ -1,0 +1,160 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background: #fefcfb;
+    padding: 2rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  h1 {
+    color: #ff6f61;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Mode toggle buttons */
+  .mode-toggle {
+    margin-bottom: 1rem;
+  }
+  
+  .mode-toggle button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    background-color: #ffd6d6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .mode-toggle button:hover {
+    background-color: #ffb6b9;
+  }
+  
+  #modeStatus {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* SVG container */
+  #svgContainer {
+    margin: 1rem auto;
+  }
+  
+  /* Drawing canvas */
+  canvas {
+    margin: 1rem auto;
+    display: block;
+    border: 1px solid #ccc;
+    background: #ffffff;
+  }
+  
+  /* Color picker */
+  .color-picker {
+    margin: 1rem 0;
+  }
+  
+  .color-picker input[type="color"] {
+    margin-left: 0.5rem;
+    width: 50px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Picture dropdown */
+  #pictureSelectContainer {
+    margin-bottom: 1rem;
+  }
+  
+  #pictureSelect {
+    padding: 0.4rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Brush Size */
+  .brush-size {
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  .brush-size button {
+    padding: 0.4rem 1rem;
+    margin: 0 0.25rem;
+    border: none;
+    background-color: #d6f0ff;
+    color: #333;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .brush-size button:hover {
+    background-color: #a5e0ff;
+  }
+  
+  #brushDisplay {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Rainbow Mode */
+  .rainbow-mode {
+    margin: 1.5rem 0;
+  }
+  
+  .rainbow-mode button {
+    padding: 0.5rem 1rem;
+    background-color: #ffd6ff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .rainbow-mode button:hover {
+    background-color: #ffb6f9;
+  }
+  
+  /* Download & Reset */
+  button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background: #ffb6b9;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #ff6f61;
+  }
+  
+  .autism-badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(90deg, #ffcc00, #66ccff, #ff6666);
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    gap: 0.5rem;
+  }
+  
+  .autism-badge .puzzle {
+    font-size: 1.2rem;
+  }
+  
+  
+  
