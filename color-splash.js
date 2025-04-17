@@ -1,8 +1,38 @@
 const colorPicker = document.getElementById('colorPicker');
+const svgContainer = document.getElementById("svgContainer");
+const eraserBtn = document.getElementById("eraserButton");
+const canvas = document.getElementById("drawingCanvas");
+const pen = canvas.getContext("2d");
+const picture = document.getElementById("pictureSelectContainer")
+
+let isDrawing = false;
 let brushSize = 1;
 let isRainbowMode = false;
+let currentMode = "color";  // Default to coloring mode
+let isErasing = false;      // Tracks if eraser is active
 
-// SVGs to choose from
+// Toggle drawing or coloring
+function setMode(mode) {
+    currentMode = (mode === 'erase') ? 'draw' : mode;
+    isErasing = (mode === 'erase');
+  
+    svgContainer.style.display = currentMode === "color" ? "block" : "none";
+    canvas.style.display = currentMode === "draw" ? "block" : "none";
+    eraserBtn.style.display = currentMode === "draw" ? "inline-block" : "none";
+    picture.style.display = currentMode === "color" ? "block" : "none";
+  
+    document.getElementById("modeStatus").innerText =
+      `Current Mode: ${isErasing ? "Erase (Draw)" : capitalize(currentMode)}`;
+  
+    canvas.style.pointerEvents = (currentMode === "draw") ? "auto" : "none";
+  }  
+
+// Helper to capitalize
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// SVGs
 const svgs = {
   "Shapes": `
     <svg id="coloringSVG" width="400" height="400" viewBox="0 0 200 200">
@@ -29,16 +59,13 @@ const svgs = {
   `
 };
 
-// DOM setup
 const pictureSelect = document.getElementById("pictureSelect");
-const svgContainer = document.getElementById("svgContainer");
 
-// Load SVG function
+// Load selected SVG
 function loadSVG(name) {
   svgContainer.innerHTML = svgs[name];
   const newSVG = document.getElementById("coloringSVG");
 
-  // Click-to-color logic
   newSVG.addEventListener("click", (e) => {
     if (e.target.tagName !== 'svg') {
       const color = isRainbowMode ? getRandomColor() : colorPicker.value;
@@ -47,28 +74,28 @@ function loadSVG(name) {
   });
 }
 
-// Load default SVG
+// Load default
 loadSVG("Shapes");
 
-// Listen for dropdown changes
+// Dropdown listener
 pictureSelect.addEventListener("change", (e) => {
   loadSVG(e.target.value);
 });
 
-// Brush size logic
+// Brush size
 function setBrushSize(size) {
   brushSize = size;
   const label = size === 1 ? "Small" : size === 3 ? "Medium" : "Large";
   document.getElementById('brushDisplay').innerText = `Current Brush Size: ${label}`;
 }
 
-// Rainbow mode toggle
+// Rainbow mode
 function toggleRainbow() {
   isRainbowMode = !isRainbowMode;
   document.getElementById('rainbowStatus').innerText = `Rainbow Mode: ${isRainbowMode ? "ON" : "OFF"}`;
 }
 
-// Random color generator
+// Random color
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
   let color = '#';
@@ -78,7 +105,7 @@ function getRandomColor() {
   return color;
 }
 
-// Download (to be improved for SVG)
+// Save art
 function downloadArt() {
   html2canvas(svgContainer).then(canvas => {
     const link = document.createElement('a');
@@ -87,16 +114,56 @@ function downloadArt() {
     link.click();
   });
 }
- 
-//Reset 
+
+// Reset SVG fill
 function resetGrid() {
-    const svg = document.getElementById("coloringSVG");
-    if (!svg) return;
-  
-    const colorableElements = svg.querySelectorAll("rect, circle, polygon, path");
-  
-    colorableElements.forEach(el => {
-      el.setAttribute("fill", "white");
-    });
+  const svg = document.getElementById("coloringSVG");
+  if (!svg) return;
+
+  const colorableElements = svg.querySelectorAll("rect, circle, polygon, path");
+
+  colorableElements.forEach(el => {
+    el.setAttribute("fill", "white");
+  });
+
+  // Also clear canvas if in draw mode
+  if (canvas && pen) {
+    pen.clearRect(0, 0, canvas.width, canvas.height);
   }
-  
+}
+
+// Drawing events
+canvas.addEventListener("mousedown", (e) => {
+  isDrawing = true;
+  draw(e);
+});
+
+canvas.addEventListener("mousemove", draw);
+
+canvas.addEventListener("mouseup", () => {
+  isDrawing = false;
+  pen.beginPath();
+});
+
+canvas.addEventListener("mouseout", () => {
+  isDrawing = false;
+  pen.beginPath();
+});
+
+// Drawing function
+function draw(e) {
+  if (!isDrawing || currentMode !== "draw") return;
+
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  pen.lineWidth = brushSize;
+  pen.lineCap = "round";
+  pen.strokeStyle = isErasing ? "#ffffff" : (isRainbowMode ? getRandomColor() : colorPicker.value);
+
+  pen.lineTo(x, y);
+  pen.stroke();
+  pen.beginPath();
+  pen.moveTo(x, y);
+}

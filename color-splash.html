@@ -4,29 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Color Splash</title>
-  <link rel="stylesheet" href="color- splash.css" />
+  <link rel="stylesheet" href="color-splash.css" />
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
   <h1>🎨 Color Splash</h1>
 
+  <!-- Mode Toggle Buttons -->
+  <div class="mode-toggle">
+    <button onclick="setMode('color')">🎨 Color Mode</button>
+    <button onclick="setMode('draw')">✏️ Draw Mode</button>
+    <button id="eraserButton" onclick="setMode('erase')" style="display: none;">🧽 Eraser</button>
+    <p id="modeStatus">Current Mode: Color</p>
+  </div>
+
+  <!-- Drawing Canvas -->
+  <canvas id="drawingCanvas" width="400" height="400" style="display:none; border:1px solid #ccc; background:#fff;"></canvas>
+
+  <!-- SVG Container (for Coloring Mode) -->
+  <div id="svgContainer"></div>
+
+  <!-- Color Picker -->
   <div class="color-picker">
     <label>Pick a color:</label>
     <input type="color" id="colorPicker" value="#ff6f61" />
   </div>
 
-  <label for="pictureSelect">Choose a picture:</label>
-  <select id="pictureSelect">
-    <option value="Shapes">Shapes</option>
-    <option value="Sunshine">Sunshine</option>
-    <option value="House">House</option>
-  </select>
+  <!-- Picture Selector -->
+  <div id="pictureSelectContainer">
+    <label for="pictureSelect">Choose a picture:</label>
+    <select id="pictureSelect">
+      <option value="Shapes">Shapes</option>
+      <option value="Sunshine">Sunshine</option>
+      <option value="House">House</option>
+    </select>
+  </div>
 
-  <div id="svgContainer"></div>
-
+  <!-- Controls -->
   <button onclick="downloadArt()">💾 Save Your Art</button>
   <button onclick="resetGrid()">Reset</button>
 
+  <!-- Brush Size -->
   <div class="brush-size">
     <label>Brush Size:</label>
     <button onclick="setBrushSize(1)">Small</button>
@@ -35,6 +53,7 @@
   </div>
   <p id="brushDisplay">Current Brush Size: Small</p>
 
+  <!-- Rainbow Mode -->
   <div class="rainbow-mode">
     <button onclick="toggleRainbow()">🌈 Toggle Rainbow Mode</button>
     <p id="rainbowStatus">Rainbow Mode: OFF</p>
