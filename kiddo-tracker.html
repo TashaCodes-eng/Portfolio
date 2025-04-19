@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kiddo Tracker</title>
+  <link rel="stylesheet" href="kiddo-tracker.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Kiddo Tracker <span title="Autism Awareness">💙🧩</span></h1>
+  </header>
+
+  <main>
+    <section class="card-container">
+      <div class="card" onclick="openSchedule()">
+        <h2>📅 Visual Schedule</h2>
+        <p>Tap to view your day!</p>
+      </div>
+      <div class="card" onclick="openFeelings()">
+        <h2>😊 How I Feel</h2>
+        <p>Share your emotions</p>
+      </div>
+      <div class="card" onclick="openWants()">
+        <h2>🗣️ What I Want</h2>
+        <p>Communicate your needs</p>
+      </div>
+    </section>
+
+    <section id="interactive-area">
+      <div class="response-wrapper">
+      </div>
+    </section>
+  </main>
+
+  <script src="kiddo-tracker.js"></script>
+</body>
+</html>
+
+
+

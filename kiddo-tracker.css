@@ -1,0 +1,201 @@
+/* General Body Styles */
+body {
+  background-image: url('images/autism-background.png');
+  background-color: #fceff9;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+  font-family: 'Comic Sans MS', 'Quicksand', sans-serif;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #ffb6b9; 
+}
+
+header span {
+  font-size: 1.5rem;
+}
+
+/* Container for Schedule, Emotion, and Want Cards (Side-by-Side) */
+.card-container {
+  display: flex;
+  justify-content: space-around; 
+  flex-wrap: wrap; 
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 7rem;
+  width: 30%; 
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #fff0f6;
+}
+
+.card h2 {
+  color: #f48fb1; 
+  margin-bottom: 0.5rem;
+}
+
+#interactive-area {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Emotion Cards */
+.emotion-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 3.5rem;
+  width: 80%; 
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin: 1rem auto; 
+}
+
+.emotion-card h3 {
+  color: #f48fb1; 
+}
+
+.emotion-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.emotion-buttons button {
+  padding: 5rem 7rem;
+  background-color: #ffb6b9; 
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.emotion-buttons button:hover {
+  background-color: #5a3e80;
+}
+
+/* Buttons */
+button {
+  background: #ffcc80; 
+  color: #4e342e;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0.3rem;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #ffe0b2;
+}
+
+/* Checklist items */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #dcedc8; 
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Input fields */
+input[type="text"] {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+  width: 90%;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#interactive-area h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #6a4c93;
+}
+
+.response-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh; 
+  width: 100%;
+}
+
+.response-card {
+  background: #fff3cd;
+  border: 2px solid #f0ad4e;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto; 
+}
+
+
+.want-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2rem auto; 
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+
