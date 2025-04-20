@@ -167,3 +167,40 @@ function draw(e) {
   pen.beginPath();
   pen.moveTo(x, y);
 }
+
+// Touch support for mobile drawing
+canvas.addEventListener("touchstart", (e) => {
+  if (currentMode !== "draw") return;
+  isDrawing = true;
+  const touch = e.touches[0];
+  const rect = canvas.getBoundingClientRect();
+  const x = touch.clientX - rect.left;
+  const y = touch.clientY - rect.top;
+  pen.beginPath();
+  pen.moveTo(x, y);
+  e.preventDefault();
+});
+
+canvas.addEventListener("touchmove", (e) => {
+  if (!isDrawing || currentMode !== "draw") return;
+  const touch = e.touches[0];
+  const rect = canvas.getBoundingClientRect();
+  const x = touch.clientX - rect.left;
+  const y = touch.clientY - rect.top;
+
+  pen.lineWidth = brushSize;
+  pen.lineCap = "round";
+  pen.strokeStyle = isErasing ? "#ffffff" : (isRainbowMode ? getRandomColor() : colorPicker.value);
+
+  pen.lineTo(x, y);
+  pen.stroke();
+  pen.beginPath();
+  pen.moveTo(x, y);
+  e.preventDefault();
+});
+
+canvas.addEventListener("touchend", () => {
+  isDrawing = false;
+  pen.beginPath();
+});
+
