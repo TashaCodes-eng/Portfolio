@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Safari</title>
+    <link rel="stylesheet" href="sound-safari.css" />
+</head>
+<body>
+    <header>
+        <h1> 🎧 Sound Safari</h1>
+    </header>
+    
+    <main id="game-area">
+        <div class="menu">
+            <button onclick="startJungleJam()">
+              <div class="menu-content">
+                Jungle Jam
+                <img src="images/monkey.png" alt="monkey" />
+              </div>
+            </button>
+            <button onclick="startGuessSound()">
+              <div class="menu-content">
+                 Guess the Sound
+                <img src="images/guess.png" alt="guess" />
+              </div>
+            </button>
+            <button onclick="startMakeSoundtrack()">
+              <div class="menu-content">
+                 Make a Soundtrack
+                <img src="images/drum.png" alt="drum" />
+              </div>
+            </button>
+          </div>
+          
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="sound-safari.js"></script>
+</body>
+</html>

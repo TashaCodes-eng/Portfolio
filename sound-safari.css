@@ -1,0 +1,222 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: url('images/sarfari.avif') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: #ffb6b9;
+  }
+  
+  header {
+    background-color: rgba(255, 159, 28, 0.85);
+    padding: 20px;
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+  }
+  
+  .menu button {
+    background-color: #fcd34d;
+    border: none;
+    border-radius: 15px;
+    padding: 1.5rem;
+    font-family: 'Comic Sans MS';
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    width: 260px;
+  }
+  
+  .menu button:hover {
+    transform: scale(1.05);
+  }
+  
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .menu-content img {
+    width: 125px;
+    height: 150px;
+    object-fit: contain;
+    margin-top: 0.5rem;
+  }
+  
+  .animal-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 15px;
+  }
+  
+  .animal-buttons button {
+    font-size: 2rem;
+    padding: 20px;
+    width: 150px;
+    height: 100px;
+    border: none;
+    border-radius: 15px;
+    background-color: #ffbf69;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+  }
+  
+  .animal-buttons button:hover {
+    background-color: #faa916;
+    transform: scale(1.05);
+  }
+  
+  /* Jungle Jam Section */
+.jungle-jam-container {
+  background-color: #fef6e4;
+  border: 4px solid #f9c74f;
+  border-radius: 20px;
+  padding: 5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.jungle-jam-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.jungle-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.jungle-buttons button {
+  background-color: #90be6d;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: 'Fredoka', sans-serif;
+  width: 120px;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.guess-sound-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.guess-sound-container button {
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffdd57;
+  color: #333;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px #c7b347;
+  transition: all 0.2s ease;
+}
+
+.guess-sound-container button:hover {
+  background-color: #ffe97a;
+  transform: scale(1.05);
+}
+
+.guess-sound-container button:active {
+  box-shadow: none;
+  transform: scale(0.95);
+}
+
+.guess-nav-buttons {
+  margin-top: 20px;
+}
+
+.guess-options {
+  margin: 20px 0;
+}
+
+.guess-result {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+
+.jungle-buttons button:hover {
+  background-color: #6aa84f;
+  transform: scale(1.05);
+}
+
+.soundtrack-display {
+  margin-top: 20px;
+  padding: 15px;
+  border: 3px dashed #ffcc66;
+  background-color: #fff8e1;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  min-height: 60px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.soundtrack-buttons button {
+  font-size: 2rem;
+  margin: 10px;
+  padding: 15px;
+  border: none;
+  background-color: #d2f8d2;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.soundtrack-buttons button:hover {
+  transform: scale(1.1);
+  background-color: #b3f1b3;
+}
+
+.soundtrack-controls {
+  margin-top: 25px;
+}
+
+.soundtrack-controls button {
+  margin: 8px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #ffd966;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive;
+  transition: background-color 0.2s ease;
+}
+
+.soundtrack-controls button:hover {
+  background-color: #ffcc33;
+}
+
+
+  
