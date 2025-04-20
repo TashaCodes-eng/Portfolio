@@ -4,14 +4,14 @@ let currentGuessSound = null;
 
 // 1. Sound Map
 const animalSounds = {
-    elephant: new Howl({ src: ['/sounds/elephant.mp3'] }),
-    monkey: new Howl({ src: ['/sounds/monkey.wav'] }),
-    bird: new Howl({ src: ['/sounds/birds.wav'] }),
-    drum: new Howl({ src: ['/sounds/drums.mp3'] }),
-    tiger: new Howl({ src: ['/sounds/tiger.mp3'] }),
-    lion: new Howl({ src: ['/sounds/lion.wav'] }),
-    frog: new Howl({ src: ['/sounds/frogs.mp3'] }),
-    snake: new Howl({ src: ['/sounds/rattlesnake.mp3'] })
+    elephant: new Howl({ src: ['sounds/elephant.mp3'] }),
+    monkey: new Howl({ src: ['sounds/monkey.wav'] }),
+    bird: new Howl({ src: ['sounds/birds.wav'] }),
+    drum: new Howl({ src: ['sounds/drums.mp3'] }),
+    tiger: new Howl({ src: ['sounds/tiger.mp3'] }),
+    lion: new Howl({ src: ['sounds/lion.wav'] }),
+    frog: new Howl({ src: ['sounds/frogs.mp3'] }),
+    snake: new Howl({ src: ['sounds/rattlesnake.mp3'] })
   };
   
   // 2. Play Function
@@ -204,7 +204,7 @@ function playSoundtrack() {
     if (index < soundtrack.length) {
       playSound(soundtrack[index]);
       index++;
-      setTimeout(playNext, 1200); // Wait 1.2 sec before playing the next sound
+      setTimeout(playNext, 1200); 
     }
   };
   playNext();
