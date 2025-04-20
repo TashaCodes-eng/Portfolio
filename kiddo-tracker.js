@@ -61,6 +61,51 @@ function openSchedule() {
     const tasks = Array.from(taskElements).map(li => li.textContent.replace("❌", "").trim());
     localStorage.setItem("scheduleTasks", JSON.stringify(tasks));
   }
+
+  // === Emotion Section ===
+  function openFeelings() {
+    document.querySelector(".card-container").style.display = "none";
+    const area = document.getElementById("interactive-area");
+  
+    area.innerHTML = `
+      <h3>How Are You Feeling?</h3>
+      <div class="emotion-buttons">
+        <button onclick="setEmotion('😊 Happy')">😊 Happy</button>
+        <button onclick="setEmotion('😢 Sad')">😢 Sad</button>
+        <button onclick="setEmotion('😠 Angry')">😠 Angry</button>
+        <button onclick="setEmotion('😴 Tired')">😴 Tired</button>
+        <button onclick="setEmotion('😕 Confused')">😕 Confused</button>
+      </div>
+      <br><br>
+      <button onclick="goBack()">⬅️ Back</button>
+    `;
+  }  
+  
+  function setEmotion(emotion) {
+    const text = `I am ${emotion.split(' ')[1].toLowerCase()}.`;
+  
+    const msg = new SpeechSynthesisUtterance(text);
+    msg.lang = 'en-US';
+    msg.rate = 0.9;
+    window.speechSynthesis.speak(msg);
+  
+    // Show it visually with a Back button that re-opens the feelings menu
+    document.getElementById("interactive-area").innerHTML = `
+      <div class="emotion-card">
+        <h3>I am feeling: ${emotion}</h3>
+      </div>
+      <br><br>
+      <button onclick="openFeelings()">⬅️ Back</button>
+    `;
+  }
+  
+  
+  
+  function goBack() {
+    document.querySelector(".card-container").style.display = "flex";
+    document.getElementById("interactive-area").innerHTML = "";
+  }
+  
   
   // === WANTS SECTION ===
   

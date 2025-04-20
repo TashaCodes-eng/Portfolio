@@ -69,7 +69,7 @@ header span {
 
 /* Emotion Cards */
 .emotion-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: #ffb6b9;
   border-radius: 20px;
   padding: 3.5rem;
   width: 80%; 
@@ -159,7 +159,7 @@ input[type="text"] {
 #interactive-area h3 {
   text-align: center;
   font-size: 2rem;
-  color: #6a4c93;
+  color: white;
 }
 
 .response-wrapper {
