@@ -1,12 +1,13 @@
 /* Base styles */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    text-align: center;
-    background: #fefcfb;
-    padding: 2rem;
-    margin: 0;
-    color: #333;
-  }
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: url('images/art-background.avif') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 2rem;
+  color: #333;
+}
   
   h1 {
     color: #ff6f61;
