@@ -8,8 +8,8 @@ const picture = document.getElementById("pictureSelectContainer")
 let isDrawing = false;
 let brushSize = 1;
 let isRainbowMode = false;
-let currentMode = "color";  // Default to coloring mode
-let isErasing = false;      // Tracks if eraser is active
+let currentMode = "color";  
+let isErasing = false;     
 
 // Toggle drawing or coloring
 function setMode(mode) {
